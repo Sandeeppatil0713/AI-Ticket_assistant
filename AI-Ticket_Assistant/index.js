@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import cors from 'cors'
 import dotenv from'dotenv/config';
 import dns from 'dns';
+import userRoutes from './routes/user.js'
 
 dns.setServers(['8.8.8.8','1.1.1.1'])
 
@@ -12,6 +13,7 @@ const PORT = process.env.PORT || 3000
 const app = express();
 app.use(cors())
 app.use(express.json())
+app.use("/api/auth/",userRoutes)
 
 mongoose.connect(process.env.MONGO_URI)
     .then(()=>{

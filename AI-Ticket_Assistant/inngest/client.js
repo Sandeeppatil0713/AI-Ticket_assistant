@@ -1,4 +1,4 @@
 import {Inngest} from 'inngest';
 
-const inngest = new Inngest({ id:"Ticket-System" })
+export const inngest = new Inngest({ id:"Ticket-System" })
 
